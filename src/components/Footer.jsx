@@ -22,9 +22,9 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Contact</h4>
           <address style={{ fontStyle: 'normal' }}>
-            <a href="tel:+12194657671" aria-label="Call Elite Crete Systems">+1 (219) 465-7671</a>
-            <a href="mailto:info@elitecrete.com" aria-label="Email Elite Crete Systems">info@elitecrete.com</a>
-            <p>Valparaiso, Indiana, USA</p>
+            <a href="tel:210-612-5947" aria-label="Call Elite Crete Systems">210- 612-5947</a>
+            <a href="mailto:carlos.pena@elitecrete.com" aria-label="Email Elite Crete Systems">carlos.pena@elitecrete.com</a>
+            <p>10811 Perrin Beitel Rd<br />San Antonio, TX</p>
           </address>
         </div>
       </div>
