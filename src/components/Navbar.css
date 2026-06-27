@@ -8,8 +8,8 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 .nav-container { max-width: 1200px; margin: 0 auto; padding: 0.75rem 1.5rem; display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.logo-link { text-decoration: none; display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
-.logo-text { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; color: #fff; }
+.logo-link { text-decoration: none; display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; margin-right: 2rem; }
+.logo-text { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; color: #4A89BA; white-space: nowrap; text-transform: uppercase; }
 .nav-logo { height: 50px; width: auto; object-fit: contain; }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a { color: #A0A0A5; font-weight: 500; text-decoration: none; transition: color 0.2s ease; font-size: 0.95rem; }
