@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import DetailPage from './pages/DetailPage';
 import GalleryPage from './pages/GalleryPage';
 import ResourcesPage from './pages/ResourcesPage';
+import SearchPage from './pages/SearchPage';
 import './index.css';
 
 // Lazy-load admin pages (code splitting - only loaded when user visits /admin)
@@ -35,6 +36,7 @@ function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/resources/:slug" element={<ResourcesPage />} />
+        <Route path="/search" element={<SearchPage />} />
         
         <Route path="/admin" element={<Suspense fallback={<AdminFallback />}><AdminLogin /></Suspense>} />
         <Route path="/admin" element={<Suspense fallback={<AdminFallback />}><AdminLayout /></Suspense>}>

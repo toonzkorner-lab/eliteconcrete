@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './CardGrid.css';
 
 export default function CardGrid() {
   const [items, setItems] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('All');
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,16 +33,14 @@ export default function CardGrid() {
   };
 
   const filteredItems = items.filter(item => {
-    const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase());
     const cat = getCategory(item.url);
-    const matchesFilter = filter === 'All' || cat === filter;
-    return matchesSearch && matchesFilter;
+    return filter === 'All' || cat === filter;
   });
 
-  // Reset to page 1 if filter or search changes
+  // Reset to page 1 if filter changes
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, filter]);
+  }, [filter]);
 
   const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
   const currentItems = filteredItems.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
@@ -58,15 +54,6 @@ export default function CardGrid() {
         </div>
 
         <div className="controls">
-          <div className="search-bar">
-            <Search size={20} color="#A0A0A5" />
-            <input 
-              type="text" 
-              placeholder="Search products or industries..." 
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
           <div className="filters">
             {['All', 'Products', 'Industries'].map(f => (
               <button 

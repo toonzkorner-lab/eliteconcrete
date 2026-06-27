@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X, Search } from 'lucide-react';
 import './Navbar.css';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +48,24 @@ export default function Navbar() {
               <Link to="/resources/epoxy-clear-pigmented-coatings" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Epoxy Docs</Link>
             </div>
           </div>
+          
+          <form className="nav-search" onSubmit={(e) => {
+            e.preventDefault();
+            if (searchQuery.trim()) {
+              navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+              setSearchQuery('');
+              setMobileOpen(false);
+            }
+          }}>
+            <Search size={18} color="#A0A0A5" />
+            <input 
+              type="text" 
+              placeholder="Search..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </form>
+
           <a href="#contact" className="btn btn-primary nav-btn" onClick={() => setMobileOpen(false)}>Contact Us</a>
         </div>
         <button className="mobile-menu-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle mobile menu" aria-expanded={mobileOpen}>
