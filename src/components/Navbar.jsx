@@ -7,7 +7,20 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [catalogItems, setCatalogItems] = useState([]);
+  const [showDropdown, setShowDropdown] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch('/data/catalog.json')
+      .then(res => res.json())
+      .then(data => setCatalogItems(data))
+      .catch(err => console.error(err));
+  }, []);
+
+  const filteredItems = catalogItems.filter(item => 
+    item.title.toLowerCase().includes(searchQuery.toLowerCase())
+  ).slice(0, 5);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,22 +62,59 @@ export default function Navbar() {
             </div>
           </div>
           
-          <form className="nav-search" onSubmit={(e) => {
-            e.preventDefault();
-            if (searchQuery.trim()) {
-              navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-              setSearchQuery('');
-              setMobileOpen(false);
+          <div className="search-wrapper" onBlur={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget)) {
+              setShowDropdown(false);
             }
           }}>
-            <Search size={18} color="#A0A0A5" />
-            <input 
-              type="text" 
-              placeholder="Search..." 
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </form>
+            <form className="nav-search" onSubmit={(e) => {
+              e.preventDefault();
+              if (searchQuery.trim()) {
+                navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+                setSearchQuery('');
+                setShowDropdown(false);
+                setMobileOpen(false);
+              }
+            }}>
+              <Search size={18} color="#A0A0A5" />
+              <input 
+                type="text" 
+                placeholder="Search..." 
+                value={searchQuery}
+                onFocus={() => setShowDropdown(true)}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setShowDropdown(true);
+                }}
+              />
+            </form>
+            {showDropdown && searchQuery.trim() && (
+              <div className="search-dropdown">
+                {filteredItems.length > 0 ? (
+                  filteredItems.map(item => (
+                    <Link 
+                      key={item.file} 
+                      to={`/item/${item.file.replace('.json', '')}`}
+                      className="search-dropdown-item"
+                      onClick={() => {
+                        setSearchQuery('');
+                        setShowDropdown(false);
+                        setMobileOpen(false);
+                      }}
+                    >
+                      <img 
+                        src={item.primary_image ? `/data/images/${item.primary_image}` : "https://via.placeholder.com/40x40"} 
+                        alt="" 
+                      />
+                      <span>{item.title.replace(' - Elite Crete Systems', '')}</span>
+                    </Link>
+                  ))
+                ) : (
+                  <div className="search-dropdown-empty">No products found</div>
+                )}
+              </div>
+            )}
+          </div>
 
           <a href="#contact" className="btn btn-primary nav-btn" onClick={() => setMobileOpen(false)}>Contact Us</a>
         </div>
