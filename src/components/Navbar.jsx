@@ -129,7 +129,7 @@ export default function Navbar() {
             )}
           </div>
 
-          <a href="#contact" className="btn btn-primary nav-btn" onClick={() => setMobileOpen(false)}>Contact Us</a>
+          <Link to="/contact" className="btn btn-primary nav-btn" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Contact Us</Link>
         </div>
         <button className="mobile-menu-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle mobile menu" aria-expanded={mobileOpen}>
           {mobileOpen ? <X size={28} color="#fff" /> : <Menu size={28} color="#fff" />}

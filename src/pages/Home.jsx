@@ -3,7 +3,6 @@ import Hero from '../components/Hero';
 import CardGrid from '../components/CardGrid';
 import IndustryHighlight from '../components/IndustryHighlight';
 import CaseStudies from '../components/CaseStudies';
-import Contact from '../components/Contact';
 import SEOHead from '../components/SEOHead';
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
       <CardGrid />
       <IndustryHighlight />
       <CaseStudies />
-      <Contact />
     </>
   );
 }
