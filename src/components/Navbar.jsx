@@ -45,6 +45,15 @@ export default function Navbar() {
             </div>
           </div>
           <div className="nav-dropdown">
+            <a href="#solutions" onClick={(e) => { e.preventDefault(); }}>Solutions</a>
+            <div className="dropdown-menu">
+              <Link to="/item/fire-rescue-ems" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Fire Rescue & EMS</Link>
+              <Link to="/item/aviation-and-aerospace" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Aviation & Aerospace</Link>
+              <Link to="/item/automotive" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Automotive</Link>
+              <Link to="/item/healthcare" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Healthcare</Link>
+            </div>
+          </div>
+          <div className="nav-dropdown">
             <a href="/#industries" onClick={() => setMobileOpen(false)}>Industries</a>
             <div className="dropdown-menu">
               <Link to="/item/retail-and-commercial" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Commercial</Link>
