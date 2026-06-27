@@ -11,14 +11,14 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Main navigation">
       <div className="nav-container">
-        <Link to="/" className="logo" onClick={() => window.scrollTo(0,0)}>Elite Crete<span>.</span></Link>
+        <Link to="/" className="logo" onClick={() => window.scrollTo(0,0)} aria-label="Elite Crete Systems - Home">Elite Crete<span>.</span></Link>
         <div className={`nav-links ${mobileOpen ? 'open' : ''}`}>
           <Link to="/" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Home</Link>
           <div className="nav-dropdown">
@@ -48,7 +48,7 @@ export default function Navbar() {
           </div>
           <a href="#contact" className="btn btn-primary nav-btn" onClick={() => setMobileOpen(false)}>Contact Us</a>
         </div>
-        <button className="mobile-menu-toggle" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button className="mobile-menu-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle mobile menu" aria-expanded={mobileOpen}>
           {mobileOpen ? <X size={28} color="#fff" /> : <Menu size={28} color="#fff" />}
         </button>
       </div>

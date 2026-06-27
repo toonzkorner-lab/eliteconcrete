@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FileText, Download, Folder } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 import './ResourcesPage.css';
 
 export default function ResourcesPage() {
@@ -28,6 +29,7 @@ export default function ResourcesPage() {
 
   return (
     <div className="resources-page">
+      <SEOHead title={slug && displayedResources.length > 0 ? displayedResources[0].category + ' Resources' : 'Technical Resources'} description="Download technical data sheets, color charts, and specifications for Elite Crete Systems products." path={slug ? '/resources/' + slug : '/resources'} />
       <div className="resources-header">
         <h1>{slug && displayedResources.length > 0 ? `${displayedResources[0].category} Resources` : 'Technical Resources'}</h1>
         <p>{slug ? `Download technical data and specifications for ${displayedResources[0]?.category}.` : 'Select a category below to view its available technical data sheets, color charts, and specifications.'}</p>

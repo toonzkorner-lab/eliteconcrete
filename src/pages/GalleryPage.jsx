@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ImageIcon } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 import './GalleryPage.css';
 
 export default function GalleryPage() {
@@ -24,6 +25,11 @@ export default function GalleryPage() {
 
   return (
     <div className="gallery-page">
+      <SEOHead 
+        title="Project Gallery" 
+        description="Explore hundreds of high-performance flooring installations by Elite Crete Systems across commercial, industrial, and residential projects."
+        path="/gallery"
+      />
       <div className="gallery-header">
         <h1>Project Gallery</h1>
         <p>Explore hundreds of high-performance flooring installations across various industries.</p>
@@ -38,8 +44,10 @@ export default function GalleryPage() {
               <div className="gallery-item" key={(currentPage - 1) * itemsPerPage + i}>
                 <img 
                   src={`/data/images/${img}`} 
-                  alt={`Project ${i}`} 
-                  loading="lazy" 
+                  alt={`Elite Crete flooring project ${(currentPage - 1) * itemsPerPage + i + 1}`} 
+                  loading="lazy"
+                  width="400"
+                  height="300"
                   onError={(e) => { e.target.parentElement.style.display = 'none'; }}
                 />
               </div>
