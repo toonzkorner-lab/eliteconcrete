@@ -110,7 +110,7 @@ function rebuildResources() {
   const files = fs.readdirSync(DATA_DIR);
   
   files.forEach(filename => {
-    if (!filename.endsWith('.json') || ['catalog.json', 'gallery.json', 'resources.json', 'index.json'].includes(filename)) return;
+    if (!filename.endsWith('.json') || ['catalog.json', 'gallery.json', 'resources.json', 'index.json', 'messages.json'].includes(filename)) return;
     const filepath = path.join(DATA_DIR, filename);
     const data = JSON.parse(fs.readFileSync(filepath, 'utf8'));
     if (data.pdfs && data.pdfs.length > 0) {
@@ -126,6 +126,44 @@ function rebuildResources() {
   resources.sort((a, b) => a.category.localeCompare(b.category));
   fs.writeFileSync(path.join(DATA_DIR, 'resources.json'), JSON.stringify(resources, null, 4));
 }
+
+app.post('/api/contact', (req, res) => {
+  const messageData = req.body;
+  messageData.id = Date.now().toString();
+  messageData.date = new Date().toISOString();
+  messageData.read = false;
+
+  const messagesPath = path.join(DATA_DIR, 'messages.json');
+  let messages = [];
+  if (fs.existsSync(messagesPath)) {
+    messages = JSON.parse(fs.readFileSync(messagesPath, 'utf8'));
+  }
+  messages.unshift(messageData);
+  fs.writeFileSync(messagesPath, JSON.stringify(messages, null, 4));
+  res.json({ success: true });
+});
+
+app.get('/api/messages', (req, res) => {
+  const messagesPath = path.join(DATA_DIR, 'messages.json');
+  if (fs.existsSync(messagesPath)) {
+    res.json(JSON.parse(fs.readFileSync(messagesPath, 'utf8')));
+  } else {
+    res.json([]);
+  }
+});
+
+app.post('/api/messages/:id/read', (req, res) => {
+  const messagesPath = path.join(DATA_DIR, 'messages.json');
+  if (fs.existsSync(messagesPath)) {
+    let messages = JSON.parse(fs.readFileSync(messagesPath, 'utf8'));
+    const msg = messages.find(m => m.id === req.params.id);
+    if (msg) {
+      msg.read = true;
+      fs.writeFileSync(messagesPath, JSON.stringify(messages, null, 4));
+    }
+  }
+  res.json({ success: true });
+});
 
 const PORT = 3001;
 app.listen(PORT, () => {

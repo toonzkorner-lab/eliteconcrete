@@ -15,6 +15,7 @@ const AdminLogin = lazy(() => import('./pages/admin/AdminLogin'));
 const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
 const DashboardOverview = lazy(() => import('./pages/admin/DashboardOverview'));
 const AnalyticsDash = lazy(() => import('./pages/admin/AnalyticsDash'));
+const ManageMessages = lazy(() => import('./pages/admin/ManageMessages'));
 const ManageProducts = lazy(() => import('./pages/admin/ManageProducts'));
 const ManageGallery = lazy(() => import('./pages/admin/ManageGallery'));
 const ManageResources = lazy(() => import('./pages/admin/ManageResources'));
@@ -43,6 +44,7 @@ function App() {
         <Route path="/admin" element={<Suspense fallback={<AdminFallback />}><AdminLogin /></Suspense>} />
         <Route path="/admin" element={<Suspense fallback={<AdminFallback />}><AdminLayout /></Suspense>}>
           <Route path="dashboard" element={<Suspense fallback={<AdminFallback />}><DashboardOverview /></Suspense>} />
+          <Route path="messages" element={<Suspense fallback={<AdminFallback />}><ManageMessages /></Suspense>} />
           <Route path="analytics" element={<Suspense fallback={<AdminFallback />}><AnalyticsDash /></Suspense>} />
           <Route path="products" element={<Suspense fallback={<AdminFallback />}><ManageProducts /></Suspense>} />
           <Route path="gallery" element={<Suspense fallback={<AdminFallback />}><ManageGallery /></Suspense>} />

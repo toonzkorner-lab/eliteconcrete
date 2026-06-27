@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Package, Image as ImageIcon, FileText, BarChart2, LogOut } from 'lucide-react';
+import { LayoutDashboard, Package, Image as ImageIcon, FileText, BarChart2, MessageSquare, LogOut } from 'lucide-react';
 import './AdminStyles.css';
 
 export default function AdminLayout() {
@@ -27,6 +27,9 @@ export default function AdminLayout() {
         <nav className="admin-nav">
           <NavLink to="/admin/dashboard" className={({isActive}) => isActive ? 'admin-nav-link active' : 'admin-nav-link'}>
             <LayoutDashboard size={20} /> Overview
+          </NavLink>
+          <NavLink to="/admin/messages" className={({isActive}) => isActive ? 'admin-nav-link active' : 'admin-nav-link'}>
+            <MessageSquare size={20} /> Messages
           </NavLink>
           <NavLink to="/admin/analytics" className={({isActive}) => isActive ? 'admin-nav-link active' : 'admin-nav-link'}>
             <BarChart2 size={20} /> Analytics

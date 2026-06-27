@@ -18,16 +18,27 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Mock API call
-    setTimeout(() => {
+    
+    try {
+      const res = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      if (res.ok) {
+        setIsSuccess(true);
+        setFormData({ name: '', email: '', phone: '', company: '', interest: 'Microcement', message: '' });
+        setTimeout(() => setIsSuccess(false), 5000);
+      }
+    } catch (err) {
+      console.error('Failed to submit form', err);
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({ name: '', email: '', phone: '', company: '', interest: 'Microcement', message: '' });
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
+    }
   };
 
   return (
