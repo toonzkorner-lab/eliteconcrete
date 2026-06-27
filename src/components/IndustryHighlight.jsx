@@ -9,40 +9,40 @@ const industries = [
     id: 'fire-rescue',
     title: 'Fire, Rescue & EMS',
     icon: <Flame size={24} />,
-    description: 'Heavy-duty apparatus and constant foot traffic require flooring that can withstand extreme abuse. Our industrial-grade epoxy and urethane systems offer unmatched durability, chemical resistance, and slip-resistance for firehouses and EMS facilities.',
-    image: 'https://images.unsplash.com/photo-1616422285623-131f421ce7f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    link: '/item/industrial'
+    description: 'HERMETIC™ Fire Apparatus Flooring Systems are resinous, fluid-applied floors engineered to improve the durability of fire apparatus bay floors while also providing a slip resistant floor even when wet. They provide high abrasion and impact resistance while improving aesthetics.',
+    image: '/data/images/10-Gordon-county-fire-station-reflector-by-Adam-Diskey-1-768x768.jpg',
+    link: '/item/fire-rescue-ems'
   },
   {
     id: 'aviation',
     title: 'Aviation & Aerospace',
     icon: <Plane size={24} />,
-    description: 'Aircraft hangars demand high-performance coatings that resist Skydrol, jet fuel, and hot-tire pickup. We provide light-reflective, seamless surfaces that make maintenance easy while ensuring maximum safety.',
-    image: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    link: '/item/industrial'
+    description: 'Our Aviation & Aerospace Flooring Systems are ultra high performance, self-leveling, resinous coatings engineered for specialty aerospace floors. Offering impact protection and increasing the strength of the concrete substrate, they provide exceptional resistance to Skydrol fluids and other petrochemicals.',
+    image: '/data/images/16-Industrial-hangar-flake-stout-combo-1.jpg',
+    link: '/item/aviation-and-aerospace'
   },
   {
     id: 'automotive',
     title: 'Automotive & Showrooms',
     icon: <Car size={24} />,
-    description: 'From the high-gloss elegance of a showroom to the rugged durability required in the service bays, our customized flooring systems deliver striking aesthetics without compromising on performance.',
-    image: 'https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    link: '/item/retail-and-commercial'
+    description: 'The automotive industry has many different flooring needs such as high durability requirements for production and service areas as well as aesthetic value for showrooms. Our easy to maintain surfaces are abrasion resistant, slip resistant, and protect against petrochemicals.',
+    image: '/data/images/18-Toyota-USA-Quartz-1-1.jpg',
+    link: '/item/automotive'
   },
   {
     id: 'healthcare',
     title: 'Healthcare & Medical',
     icon: <HeartPulse size={24} />,
-    description: 'Sterile environments need seamless, non-porous flooring that prevents bacterial growth. Our specialized coatings ensure hygienic, easy-to-clean surfaces ideal for hospitals, clinics, and labs.',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    link: '/item/retail-and-commercial'
+    description: 'The healthcare industry requires flooring engineered for heavy traffic from portable medical equipment. These specialty seamless flooring systems are non-porous providing an antimicrobial surface that is resistant to chemical and biological fluids and withstands frequent aggressive cleaning.',
+    image: '/data/images/10430388_1448855615397629_6757677876344705567_n.jpg',
+    link: '/item/healthcare'
   },
   {
     id: 'commercial',
     title: 'Commercial Spaces',
     icon: <Building2 size={24} />,
-    description: 'Create a lasting first impression. Our fluid-applied architectural flooring systems, including Microcement and decorative epoxy, provide limitless design possibilities for retail stores, offices, and restaurants.',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    description: 'Our fluid-applied architectural flooring systems provide limitless design possibilities for retail stores, offices, and restaurants. Create a lasting first impression while ensuring extreme durability and low maintenance costs over the lifetime of the floor.',
+    image: '/data/images/10-Commercial-hotel-by-SBR-Concrete-Polishing-1.jpg',
     link: '/item/retail-and-commercial'
   }
 ];
