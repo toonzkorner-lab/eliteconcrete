@@ -51,6 +51,7 @@ export default function Navbar() {
               <Link to="/item/aviation-and-aerospace" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Aviation & Aerospace</Link>
               <Link to="/item/automotive" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Automotive</Link>
               <Link to="/item/healthcare" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Healthcare</Link>
+              <Link to="/item/retail-and-commercial" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Commercial Spaces</Link>
             </div>
           </div>
           <div className="nav-dropdown">
