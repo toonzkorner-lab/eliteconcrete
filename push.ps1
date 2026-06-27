@@ -1,3 +1,3 @@
 git add -A
-git commit -m "Complete mobile optimization: responsive breakpoints, touch support, iOS fixes"
+git commit -m "Fix Vercel build: convert manualChunks to function for Vite 8/rolldown compatibility"
 git push origin main
