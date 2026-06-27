@@ -1,3 +1,3 @@
 git add -A
-git commit -m "Performance & SEO optimization: lazy-loading, code splitting, meta tags, sitemap, semantic HTML"
+git commit -m "Complete mobile optimization: responsive breakpoints, touch support, iOS fixes"
 git push origin main
