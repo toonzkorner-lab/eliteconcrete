@@ -7,7 +7,10 @@ export default function Footer() {
     <footer className="footer" role="contentinfo">
       <div className="footer-container">
         <div className="footer-col">
-          <img src="/logo.jpg" alt="Elite Crete Systems" className="footer-logo-img" />
+          <div className="footer-logo-container">
+            <img src="/logo.jpg" alt="" className="footer-logo-img" />
+            <span className="footer-logo-text">Elite Crete Systems</span>
+          </div>
           <p>The global leader in high-performance surface solutions, epoxy coatings, and decorative concrete.</p>
         </div>
         <div className="footer-col">

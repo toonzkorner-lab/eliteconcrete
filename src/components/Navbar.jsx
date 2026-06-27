@@ -34,7 +34,8 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Main navigation">
       <div className="nav-container">
         <Link to="/" className="logo-link" onClick={() => window.scrollTo(0,0)} aria-label="Elite Crete Systems - Home">
-          <img src="/logo.jpg" alt="Elite Crete Systems" className="nav-logo" />
+          <img src="/logo.jpg" alt="" className="nav-logo" />
+          <span className="logo-text">Elite Crete Systems</span>
         </Link>
         <div className={`nav-links ${mobileOpen ? 'open' : ''}`}>
           <Link to="/" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Home</Link>
