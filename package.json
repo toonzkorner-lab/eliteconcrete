@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "concurrently \"vite\" \"node server.js\"",
-    "build": "echo 'Skipping Vite build to save memory'",
+    "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },
