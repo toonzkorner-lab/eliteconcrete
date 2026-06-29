@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer-col">
           <div className="footer-logo-container">
             <img src="/logo.jpg" alt="" className="footer-logo-img" />
-            <span className="footer-logo-text">Elite Crete Systems</span>
+            <span className="footer-logo-text">Elite South Texas</span>
           </div>
           <p>The global leader in high-performance surface solutions, epoxy coatings, and decorative concrete.</p>
         </div>
@@ -25,14 +25,15 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Contact</h4>
           <address style={{ fontStyle: 'normal' }}>
-            <a href="tel:210-612-5947" aria-label="Call Elite Crete Systems">210- 612-5947</a>
-            <a href="mailto:carlos.pena@elitecrete.com" aria-label="Email Elite Crete Systems">carlos.pena@elitecrete.com</a>
-            <p>10811 Perrin Beitel Rd<br />San Antonio, TX</p>
+            <a href="tel:210-612-5947" aria-label="Call Elite South Texas">210- 612-5947</a>
+            <a href="mailto:carlos.pena@elitecrete.com" aria-label="Email Elite South Texas">carlos.pena@elitecrete.com</a>
+            <p style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }}><strong>San Antonio HQ:</strong><br/>10811 Perrin Beitel Rd, San Antonio, TX</p>
+            <p><strong>Harlingen:</strong><br/>1121 S. Expressway 93, Harlingen, TX 78550</p>
           </address>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Elite Crete Systems, Inc. All Rights Reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Elite South Texas, Inc. All Rights Reserved.</p>
       </div>
     </footer>
   );

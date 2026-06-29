@@ -83,7 +83,7 @@ export default function CardGrid() {
                     </div>
                   </div>
                   <div className="card-content">
-                    <h3>{item.title.replace(' - Elite Crete Systems', '')}</h3>
+                    <h3>{item.title.replace(' - Elite South Texas', '')}</h3>
                     <span className="badge">{getCategory(item.url)}</span>
                   </div>
                 </Link>

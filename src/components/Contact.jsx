@@ -72,8 +72,9 @@ export default function Contact() {
             <div className="info-card">
               <MapPin className="info-icon" />
               <div>
-                <h3>Headquarters</h3>
-                <p>10811 Perrin Beitel Rd<br/>San Antonio, TX</p>
+                <h3>Our Locations</h3>
+                <p><strong>San Antonio HQ:</strong><br/>10811 Perrin Beitel Rd, San Antonio, TX</p>
+                <p style={{marginTop: '0.5rem'}}><strong>Harlingen:</strong><br/>1121 S. Expressway 93, Harlingen, TX 78550</p>
               </div>
             </div>
           </div>

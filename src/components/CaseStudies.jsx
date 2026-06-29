@@ -38,7 +38,7 @@ export default function CaseStudies() {
       <div className="container reveal" ref={revealRef}>
         <div className="section-header">
           <h2>Featured Case Studies</h2>
-          <p>Real-world applications of Elite Crete Systems' high-performance flooring.</p>
+          <p>Real-world applications of Elite South Texas' high-performance flooring.</p>
         </div>
 
         <div className="cs-grid">

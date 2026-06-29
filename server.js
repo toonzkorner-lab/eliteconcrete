@@ -44,7 +44,7 @@ app.post('/api/products', (req, res) => {
   
   const productData = {
     url: `https://www.elitecrete.com/${slug}/`,
-    title: `${title} - Elite Crete Systems`,
+    title: `${title} - Elite South Texas`,
     content: content,
     images: primary_image ? [primary_image] : [],
     pdfs: []
@@ -114,7 +114,7 @@ function rebuildResources() {
     const filepath = path.join(DATA_DIR, filename);
     const data = JSON.parse(fs.readFileSync(filepath, 'utf8'));
     if (data.pdfs && data.pdfs.length > 0) {
-      const cleanTitle = data.title ? data.title.replace(' - Elite Crete Systems', '').trim() : filename.replace('.json', '');
+      const cleanTitle = data.title ? data.title.replace(' - Elite South Texas', '').trim() : filename.replace('.json', '');
       resources.push({
         category: cleanTitle,
         slug: filename.replace('.json', ''),

@@ -27,7 +27,7 @@ export default function GalleryPage() {
     <div className="gallery-page">
       <SEOHead 
         title="Project Gallery" 
-        description="Explore hundreds of high-performance flooring installations by Elite Crete Systems across commercial, industrial, and residential projects."
+        description="Explore hundreds of high-performance flooring installations by Elite South Texas across commercial, industrial, and residential projects."
         path="/gallery"
       />
       <div className="gallery-header">
@@ -44,7 +44,7 @@ export default function GalleryPage() {
               <div className="gallery-item" key={(currentPage - 1) * itemsPerPage + i}>
                 <img 
                   src={`/data/images/${img}`} 
-                  alt={`Elite Crete flooring project ${(currentPage - 1) * itemsPerPage + i + 1}`} 
+                  alt={`Elite South Texas flooring project ${(currentPage - 1) * itemsPerPage + i + 1}`} 
                   loading="lazy"
                   width="400"
                   height="300"

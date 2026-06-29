@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
 export default function SEOHead({ title, description, path = '' }) {
-  const siteTitle = 'Elite Crete Systems';
+  const siteTitle = 'Elite South Texas';
   const fullTitle = title ? `${title} | ${siteTitle}` : `${siteTitle} | Premium Resinous & Epoxy Floor Coatings`;
-  const metaDescription = description || 'Elite Crete Systems is the global leader in high-performance resinous epoxy, polyurethane, and decorative concrete floor coating systems.';
+  const metaDescription = description || 'Elite South Texas is the global leader in high-performance resinous epoxy, polyurethane, and decorative concrete floor coating systems.';
   const canonical = `https://www.elitecrete.com${path}`;
 
   useEffect(() => {

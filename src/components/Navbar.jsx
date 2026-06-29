@@ -33,9 +33,9 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Main navigation">
       <div className="nav-container">
-        <Link to="/" className="logo-link" onClick={() => window.scrollTo(0,0)} aria-label="Elite Crete Systems - Home">
+        <Link to="/" className="logo-link" onClick={() => window.scrollTo(0,0)} aria-label="Elite South Texas - Home">
           <img src="/logo.jpg" alt="" className="nav-logo" />
-          <span className="logo-text">Elite Crete Systems</span>
+          <span className="logo-text">Elite South Texas</span>
         </Link>
         <div className={`nav-links ${mobileOpen ? 'open' : ''}`}>
           <Link to="/" onClick={() => { window.scrollTo(0,0); setMobileOpen(false); }}>Home</Link>
@@ -119,7 +119,7 @@ export default function Navbar() {
                         src={item.primary_image ? `/data/images/${item.primary_image}` : "https://via.placeholder.com/40x40"} 
                         alt="" 
                       />
-                      <span>{item.title.replace(' - Elite Crete Systems', '')}</span>
+                      <span>{item.title.replace(' - Elite South Texas', '')}</span>
                     </Link>
                   ))
                 ) : (

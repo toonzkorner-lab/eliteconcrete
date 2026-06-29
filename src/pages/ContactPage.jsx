@@ -12,7 +12,7 @@ export default function ContactPage() {
       <SEOHead 
         path="/contact" 
         title="Contact Us" 
-        description="Get in touch with Elite Crete Systems for consultations, product info, or project estimates."
+        description="Get in touch with Elite South Texas for consultations, product info, or project estimates."
       />
       <Contact />
     </>

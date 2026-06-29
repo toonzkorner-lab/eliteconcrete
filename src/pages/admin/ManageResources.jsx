@@ -62,7 +62,7 @@ export default function ManageResources() {
             <select className="admin-select" value={selectedProduct} onChange={e => setSelectedProduct(e.target.value)} required>
               <option value="">-- Choose Category --</option>
               {products.map(p => (
-                <option key={p.file} value={p.file.replace('.json', '')}>{p.title.replace(' - Elite Crete Systems', '')}</option>
+                <option key={p.file} value={p.file.replace('.json', '')}>{p.title.replace(' - Elite South Texas', '')}</option>
               ))}
             </select>
           </div>

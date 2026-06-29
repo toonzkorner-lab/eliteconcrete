@@ -26,8 +26,8 @@ export default function DetailPage() {
   if (loading) return <div className="detail-loading">Loading...</div>;
   if (!data) return <div className="detail-loading">Content not found.</div>;
 
-  const pageTitle = data.title.replace(' - Elite Crete Systems', '');
-  const pageDesc = data.content ? data.content.substring(0, 160) : `Learn about ${pageTitle} from Elite Crete Systems.`;
+  const pageTitle = data.title.replace(' - Elite South Texas', '');
+  const pageDesc = data.content ? data.content.substring(0, 160) : `Learn about ${pageTitle} from Elite South Texas.`;
 
   return (
     <div className="detail-page">

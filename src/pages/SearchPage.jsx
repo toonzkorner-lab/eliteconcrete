@@ -39,8 +39,8 @@ export default function SearchPage() {
   return (
     <main>
       <SEOHead 
-        title={`Search Results for "${query}" - Elite Crete Systems`} 
-        description={`Search results for ${query} on Elite Crete Systems.`}
+        title={`Search Results for "${query}" - Elite South Texas`} 
+        description={`Search results for ${query} on Elite South Texas.`}
       />
       <section className="section" style={{ paddingTop: '8rem', minHeight: '60vh' }}>
         <div className="container">
@@ -66,7 +66,7 @@ export default function SearchPage() {
                     </div>
                   </div>
                   <div className="card-content">
-                    <h3>{item.title.replace(' - Elite Crete Systems', '')}</h3>
+                    <h3>{item.title.replace(' - Elite South Texas', '')}</h3>
                     <span className="badge">{getCategory(item.url)}</span>
                   </div>
                 </Link>
