@@ -20,7 +20,7 @@ export default function ManageProducts() {
       const formData = new FormData();
       formData.append('file', file);
       try {
-        const res = await fetch('http://localhost:3001/api/upload', {
+        const res = await fetch('/api/upload', {
           method: 'POST',
           body: formData
         });
@@ -32,7 +32,7 @@ export default function ManageProducts() {
     }
 
     try {
-      await fetch('http://localhost:3001/api/products', {
+      await fetch('/api/products', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

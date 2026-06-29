@@ -165,7 +165,13 @@ app.post('/api/messages/:id/read', (req, res) => {
   res.json({ success: true });
 });
 
-const PORT = 3001;
+// Serve frontend build in production
+app.use(express.static(path.join(__dirname, 'dist')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`Backend server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

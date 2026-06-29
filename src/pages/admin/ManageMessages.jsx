@@ -12,7 +12,7 @@ export default function ManageMessages() {
 
   const fetchMessages = async () => {
     try {
-      const res = await fetch('http://localhost:3001/api/messages');
+      const res = await fetch('/api/messages');
       const data = await res.json();
       setMessages(data);
     } catch (err) {
@@ -24,7 +24,7 @@ export default function ManageMessages() {
 
   const markAsRead = async (id) => {
     try {
-      await fetch(`http://localhost:3001/api/messages/${id}/read`, { method: 'POST' });
+      await fetch(`/api/messages/${id}/read`, { method: 'POST' });
       setMessages(messages.map(m => m.id === id ? { ...m, read: true } : m));
     } catch (err) {
       console.error('Failed to mark as read', err);

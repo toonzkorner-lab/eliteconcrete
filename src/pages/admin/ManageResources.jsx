@@ -29,7 +29,7 @@ export default function ManageResources() {
     formData.append('pdfTitle', pdfTitle);
 
     try {
-      const res = await fetch('http://localhost:3001/api/resources', {
+      const res = await fetch('/api/resources', {
         method: 'POST',
         body: formData
       });

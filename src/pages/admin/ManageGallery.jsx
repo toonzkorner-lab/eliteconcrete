@@ -24,7 +24,7 @@ export default function ManageGallery() {
       const formData = new FormData();
       formData.append('file', file);
       try {
-        const res = await fetch('http://localhost:3001/api/upload', {
+        const res = await fetch('/api/upload', {
           method: 'POST',
           body: formData
         });
@@ -38,7 +38,7 @@ export default function ManageGallery() {
     // Update gallery.json
     if (uploadedFilenames.length > 0) {
       try {
-        await fetch('http://localhost:3001/api/gallery', {
+        await fetch('/api/gallery', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ images: uploadedFilenames })
